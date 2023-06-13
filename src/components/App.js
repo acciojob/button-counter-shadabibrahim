@@ -1,16 +1,21 @@
 import React from "react";
 import { useState } from "react";
 import './../styles/App.css';
-import counter from "./counter";
 
 const App = () => {
-  
+  let [btnClicked, countBtnClicked] = useState(0);
   return (
     <div>
-        {/* Do not remove the main div */}
-        <counter/>
+      <p>Button clicked {btnClicked} times</p>
+      <button
+        onClick={() => {
+          countBtnClicked(btnClicked + 1);
+        }}
+      >
+        Click me
+      </button>
     </div>
-  )
-}
+  );
+};
 
 export default App
